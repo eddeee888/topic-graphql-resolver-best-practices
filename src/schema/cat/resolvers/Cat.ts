@@ -7,4 +7,8 @@ export const Cat: CatResolvers = {
   fullName: () => {
     /* Cat.fullName resolver is required because Cat.fullName exists but CatMapper.fullName does not */
   },
+  isChipped: ({ isChipped }) => {
+    /* Cat.isChipped resolver is required because Cat.isChipped and CatMapper.isChipped are not compatible */
+    return isChipped;
+  },
 };

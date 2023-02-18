@@ -3,4 +3,5 @@ export type CatMapper = {
   firstName: string;
   lastName: string;
   birthYear: number;
+  isChipped: boolean;
 };

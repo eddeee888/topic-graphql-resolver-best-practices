@@ -29,7 +29,10 @@ export type Cat = {
   age: Scalars["Int"];
   fullName: Scalars["String"];
   id: Scalars["ID"];
+  isChipped: CatChipped;
 };
+
+export type CatChipped = "NO" | "YES";
 
 export type Query = {
   __typename: "Query";
@@ -151,6 +154,7 @@ export type ResolversTypes = {
   Int: ResolverTypeWrapper<Scalars["Int"]>;
   String: ResolverTypeWrapper<Scalars["String"]>;
   ID: ResolverTypeWrapper<Scalars["ID"]>;
+  CatChipped: CatChipped;
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars["Boolean"]>;
 };
@@ -172,6 +176,7 @@ export type CatResolvers<
   age?: Resolver<ResolversTypes["Int"], ParentType, ContextType>;
   fullName?: Resolver<ResolversTypes["String"], ParentType, ContextType>;
   id?: Resolver<ResolversTypes["ID"], ParentType, ContextType>;
+  isChipped?: Resolver<ResolversTypes["CatChipped"], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
