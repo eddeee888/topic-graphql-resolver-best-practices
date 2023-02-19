@@ -6,6 +6,7 @@ const createCat = (id: number): CatMapper => {
     firstName: `firstName${id}`,
     lastName: `lastName${id}`,
     birthYear: 2020 + id,
+    isChipped: true,
   };
 };
 

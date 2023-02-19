@@ -1,8 +1,8 @@
 import type { QueryResolvers } from "./../../../types.generated";
 export const cat: NonNullable<QueryResolvers["cat"]> = async (
   _parent,
-  _arg,
-  _ctx
+  { id },
+  { data }
 ) => {
-  /* Implement Query.cat resolver logic here */
+  return data.cats[id];
 };

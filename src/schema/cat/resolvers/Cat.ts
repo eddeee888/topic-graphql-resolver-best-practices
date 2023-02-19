@@ -1,14 +1,12 @@
 import type { CatResolvers } from "./../../types.generated";
 export const Cat: CatResolvers = {
-  /* Implement Cat resolver logic here */
-  age: () => {
-    /* Cat.age resolver is required because Cat.age exists but CatMapper.age does not */
+  age: ({ birthYear }) => {
+    return 2023 - birthYear;
   },
-  fullName: () => {
-    /* Cat.fullName resolver is required because Cat.fullName exists but CatMapper.fullName does not */
+  fullName: ({ firstName, lastName }) => {
+    return `${firstName} ${lastName}`;
   },
   isChipped: ({ isChipped }) => {
-    /* Cat.isChipped resolver is required because Cat.isChipped and CatMapper.isChipped are not compatible */
-    return isChipped;
+    return isChipped ? "YES" : "NO";
   },
 };
